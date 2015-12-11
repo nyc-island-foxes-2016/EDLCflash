@@ -1,12 +1,35 @@
-require_relative
-
+require_relative 'flashcard'
+require 'CSV'
 module Parsable
 
-def parser(csv_file)
-  def list_parser
-    read_csv = CSV.read(csv_file,:headers=>true, :header_converters=>:symbol)
-    read_csv.map{|row| FlashCard.new(row.to_hash)}
+  # def self.list_parser(csv_file)
+  #   read_csv = CSV.read(csv_file,:headers=>true, :header_converters=>:symbol)
+  #   read_csv.map{|row| FlashCard.new(row.to_hash)}
+  # end
+
+  def card_parser(txt_file)
+    read_txt = File.open(txt_file, "r")
+    array = []
+    read_txt.map{|line| array << line}
+    # hash_array = []
+    array.each_slice(2){|line| FlashCard.new({definition: line[0], word: line[1]}})
   end
 
 end
 
+# read_txt = File.open("/Users/apprentice/Desktop/EDLCflash/flashcard.txt", "r")
+# array = []
+# read_txt.map{|line| array << line}
+# hash_array = []
+# array.each_slice(2){|line| hash_array << {definition: line[0], word: line[1]}}
+
+
+# read_txt.each_slice(2){|element| element.to_hash}
+
+# element = [ "x", "y"]
+
+# hash.new (definition: element[0], word: element[1])
+
+# FlashCard.new = {definition: element[0], word: element[1]}
+
+# read_txt = File.open(text_file, "r" )

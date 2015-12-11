@@ -1,10 +1,9 @@
 class Deck
-  # include Parser
-  attr_reader :deck
+
+  attr_reader :cards
 
   def initialize
-    deck = []
-    #deck << FlashCard.new()
+    @cards = []
   end
 
 

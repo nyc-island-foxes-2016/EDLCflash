@@ -2,10 +2,10 @@ term,definition
 alias,To create a second name for the variable or method.
 and,A command that appends two or more objects together.
 BEGIN,Designates code that must be run unconditionally at the beginning of the program before any other.
-begin,Delimits a "begin" block of code, which can allow the use of while and until in modifier position with multi-line statements.
-break,Gives an unconditional termination to a code block, and is usually placed with an argument.
-case,starts a case statement; this block of code will output a result and end when it's terms are fulfilled, which are defined with when or else.
-class,Opens a class definition block, which can later be reopened and added to with variables and even functions.
+begin,Delimits a "begin" block of code which can allow the use of while and until in modifier position with multi-line statements.
+break,Gives an unconditional termination to a code block and is usually placed with an argument.
+case,starts a case statement; this block of code will output a result and end when it's terms are fulfilled which are defined with when or else.
+class,Opens a class definition block which can later be reopened and added to with variables and even functions.
 def,Used to define a function.
 defined?,A boolean logic function that asks whether or not a targeted expression refers to anything recognizable in Ruby; i.e. literal object, local variable that has been initialized, method name visible from the current scope, etc.
 do,Paired with end, this can delimit a code block, much like curly braces; however, curly braces retain higher precedence.

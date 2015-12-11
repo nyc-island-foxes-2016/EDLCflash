@@ -1,9 +1,10 @@
 class FlashCard
-  attr_reader :side1 , :side2
+  attr_reader :term, :definition
+
   def initialize(args = {})
-    @correct = false
-    @side1 =  args[]
-    @side2 =  args[]
+    # @correct = false
+    @term =  args[:term]
+    @definition =  args[:definition]
   end
 
   # def correct?
