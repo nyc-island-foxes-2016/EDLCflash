@@ -8,15 +8,17 @@ class Controller
 
   def initialize
     @flashcard_deck = Deck.new
+
+
+
+
+
+
     cards = List_parser("flashcard.txt")
     cards << list_parser("flashcard.txt")
 
 
   end
-
-
-
-
 
 
  def run_interface
