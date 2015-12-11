@@ -3,14 +3,14 @@ class Controller
   include Parser
 
   def initialize
-
+    @view = View.new()
   end
 
-  def run_everything
-
-  end
-
-  def get_answer
+  def run_interface
+    @view.introduction
+    @view.user_interface
+    @view.get_input
+    until @view.get_input == "Quit"
 
   end
 

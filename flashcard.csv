@@ -14,7 +14,8 @@ elsif,Much like else, but has a higher precedence, and is usually paired with te
 END,Designates, via code block, code to be executed just prior to program termination.
 end,Marks the end of a while, until, begin, if, def, class, or other keyword-based, block-based construct.
 ensure,Marks the final, optional clause of a begin/end block, generally in cases where the block also contains a rescue clause. The code in this term's clause is guaranteed to be executed, whether control flows to a rescue block or not.
-false,denotes a special object, the sole instance of FalseClass. false and nil are the only objects that evaluate to Boolean falsehood in Ruby (informally, that cause an if condition to fail.)
+false,denotes a spe
+cial object, the sole instance of FalseClass. false and nil are the only objects that evaluate to Boolean falsehood in Ruby (informally, that cause an if condition to fail.)
 for,A loop constructor; used in for-loops.
 if,Ruby's basic conditional statement constructor.
 in,Used with for, helps define a for-loop.

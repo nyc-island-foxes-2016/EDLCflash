@@ -1,6 +1,6 @@
 class View
   def introduction
-  puts "Welcome to the EDLC flashcard App! We hope you learn something today!"
+    puts "Welcome to the EDLC flashcard App! We hope you learn something today!"
   end
 
   def user_interface
@@ -24,6 +24,7 @@ class View
   def clear_cards
     puts "Would you like to clear all your flash cards? (y/n) \n You HAVE to know all this stuff by now."
   end
+
   def get_input
     gets.chomp
   end
