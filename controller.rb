@@ -17,13 +17,9 @@ class Controller
   def run_interface
     random_number = rand(0..@new_deck.flashcards.length)
     entry = @view.get_input
-    # binding.pry
     if entry == 'yes'
-    # if @view.get_input == "yes"
       @view.question(@new_deck.flashcards, random_number)
-      # binding.pry
       until @view.get_input == "#{@new_deck.flashcards[random_number].term}"
-      # until @view.get_input == "#{@new_deck.flashcards[random_number].term}"
         @view.wrong_answer
       end
       @view.correct_answer

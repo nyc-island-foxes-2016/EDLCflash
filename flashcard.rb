@@ -1,6 +1,5 @@
 class FlashCard
   attr_reader :term , :definition
-  # attr_writer :correct
 
   def initialize(args = {})
     @correct = false
