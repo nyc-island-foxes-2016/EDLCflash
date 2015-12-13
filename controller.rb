@@ -8,38 +8,28 @@ class Controller
   attr_reader :new_deck
   def initialize
     @new_deck = Deck.new(parse_from_txt('source_cards.txt'))
-    # @new_deck.add_flashcards(parse_from_txt('source_cards.txt'))
     @view = View.new
+    @view.introduction
+    @view.user_interface
     run_interface
   end
 
   def run_interface
-    @view.introduction
-    @view.user_interface
-    until @view.get_input == "quit"
-      case @view.get_input
-      when "yes"
-        #random_card = @new_deck.flashcards[rand(0..@new_deck.flashcards.length)]
-        random_card = rand(0..@new_deck.flashcards.length)
-        @view.question(@new_deck.flashcards, random_card)
-        until @view.get_input == "#{@new_deck.flashcards[random_card].term}"
-          @view.wrong_answer
-        end
-        @view.correct_answer
-        # @new_deck.flashcards.guess_correct(deck_index)
-      when "continue"
-        # random_card = @new_deck.flashcards[rand(0..new_deck.flashcards.length)]
-         random_card = rand(0..@new_deck.flashcards.length)
-        @view.question(@new_deck.flashcards, random_card)
-        until @view.get_input == "#{@new_deck.flashcards[random_card].term}"
-          @view.wrong_answer
-        end
-        @view.correct_answer
-        # @new_deck.flashcards.guess_correct(deck_index)
-        @view.get_input
+    random_number = rand(0..@new_deck.flashcards.length)
+    entry = @view.get_input
+    if entry == 'yes'
+      @view.question(@new_deck.flashcards, random_number)
+      until @view.get_input == "#{@new_deck.flashcards[random_number].term}"
+        @view.wrong_answer
       end
+      @view.correct_answer
     end
-    @view.stop_playing
-    @view.goodbye
+    if entry == "quit"
+      @view.stop_playing
+      @view.goodbye
+      return false
+    else
+      run_interface
     end
+  end
 end

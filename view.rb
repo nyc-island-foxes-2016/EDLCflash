@@ -18,7 +18,7 @@ class View
   end
 
   def correct_answer
-    puts "You got it! What a genius!!! (single clap../) Would you like to continue? (continue) Or quit?"
+    puts "You got it! What a genius!!! (single clap../) Would you like to continue? ('yes' or 'quit')?"
   end
 
   def wrong_answer
