@@ -1,20 +1,26 @@
 require_relative 'flashcard'
 require_relative 'card_parser'
+
 class Deck
-  attr_accessor :deck
+  attr_accessor :deck, :flashcards
+
   include Parsable
-  def initialize(cards)
-    @deck = []
-    @deck = cards.each { |card_hash| FlashCard.new(card_hash)}
+
+  def initialize(flashcards)
+
+    @flashcards = flashcards
   end
+
+  # def add_flashcards(flashcard_objects)
+  #   @flashcards << flashcard_objects
+  # end
 
   def clear_deck
     self.deck.clear
   end
+
+  #  def guess_correct(index)
+  #   @deck[index][term].correct = true
+  #   @deck[index][term] = "#{@deck[index][term]} (correct)"
+  # end
 end
-driver_code = [{ :term => "swag", :definition => "The action and effect of being too coll to handle"}, { :term => "fresh", :definition => "The effect of being too cool to handle"}]
-my_deck = Deck.new(driver_code)
-x = my_deck.deck.shuffle
-x[0][:term]
-p x[0][:definition]
-p my_deck

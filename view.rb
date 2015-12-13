@@ -8,21 +8,21 @@ class View
   end
 
   def stop_playing
-    puts "Are you going to procastinate and stop playing? (quit)"
+    puts "Are you going to procastinate and stop playing?"
     puts "Really?"
     puts "But are you really really sure?"
   end
 
-  def question
-    puts "What is (a)#{@deck[0][:term]}?"
+  def question(deck, current_question_index)
+    puts "#{deck[current_question_index].definition}?"
   end
 
   def correct_answer
-    puts "You got it! What a genius!!! (single clap../) Would you like to continue? (continue)"
+    puts "You got it! What a genius!!! (single clap../) Would you like to continue? (continue) Or quit?"
   end
 
   def wrong_answer
-    puts ":( oh no! You were wrong. Would you like to guess again? (again) Or move on? (move)"
+    puts ":( oh no! You were wrong. Guess again stupid."
   end
 
   def clear_cards
@@ -37,5 +37,3 @@ class View
     gets.chomp.downcase
   end
 end
-
-
